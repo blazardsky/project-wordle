@@ -1,5 +1,12 @@
 import React from 'react';
 
+
+/**
+ * COMMENT AFTER THE SOLUTION VIDEO:
+ * For me: this should be separated in 2 sub components WinBanner / LostBanner with a generic "Banner" wrapper.
+ * For Josh: I tought it was "overengineering" but it is actually better. Thanks for your explaination. I'll leave this as it is tho 
+ */
+
 function Banner({status, guessNum, answer}) {
 
   switch(status) {
