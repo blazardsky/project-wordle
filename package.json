@@ -1,8 +1,8 @@
 {
   "name": "word-game",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "author": "Josh Comeau <me@joshwcomeau.com>",
+  "author": "Josh Comeau <me@joshwcomeau.com> + Niccolò Agnoletti",
   "dependencies": {
     "eslint": "8.49.0",
     "eslint-config-react-app": "7.0.1",
@@ -18,7 +18,7 @@
     "predev": "rimraf .parcel-cache dist",
     "dev": "parcel public/index.html",
     "build": "parcel build public/index.html",
-    "new-component": "new-component"
+    "new": "new-component"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }

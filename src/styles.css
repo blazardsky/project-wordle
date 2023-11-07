@@ -72,6 +72,39 @@ h1 {
   }
 }
 
+/* Keyboard */
+.keyboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.keyboard-wrapper .keyboard-row {
+  display: flex;
+  flex-direction: row no-wrap;
+  justify-items: center;
+  gap: 4px;
+}
+
+.keyboard-button {
+  padding: .5rem;
+  background: var(--color-gray-900);
+  border-radius: 4px;
+  transition: transform 25ms ease;
+}
+
+.keyboard-button:focus,
+.keyboard-button:hover {
+  transform: scale(1.02);
+} 
+.keyboard-button:active {
+  transform: scale(0.96);
+}
+
+
+/* Game */
+
 .game-wrapper {
   flex: 1;
   display: flex;
@@ -124,17 +157,21 @@ h1 {
   --radius: 0px 0px 0px 4px;
 }
 
-.cell.correct {
+.cell.correct,
+.keyboard-button.correct
+ {
   background: var(--color-success);
   border-color: var(--color-success);
   color: white;
 }
-.cell.incorrect {
+.cell.incorrect,
+.keyboard-button.incorrect {
   background: var(--color-gray-300);
   border-color: var(--color-gray-300);
   color: white;
 }
-.cell.misplaced {
+.cell.misplaced,
+.keyboard-button.misplaced {
   background: var(--color-warning);
   border-color: var(--color-warning);
   color: white;
@@ -159,6 +196,7 @@ h1 {
   border-radius: 4px;
   padding: 8px 16px;
   outline-offset: 4px;
+  text-transform: uppercase;
 }
 
 .banner {
@@ -171,8 +209,8 @@ h1 {
   margin: 0 auto;
   padding: 32px;
   text-align: center;
-  animation: slideUp 750ms cubic-bezier(0, 0.72, 0.24, 1.02);
   border-radius: 4px 4px 0px 0px;
+  animation: slideUp 750ms cubic-bezier(0, 0.72, 0.24, 1.02);
   will-change: transform;
 }
 
@@ -219,6 +257,20 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+
+#restart-button {
+  padding: .5rem;
+  border-radius: 8px;
+  background: var(--color-gray-700);
+  text-align: center;
+}
+
+
+.blink-animation {
+  animation: blink 350ms cubic-bezier(0, 0.72, 0.24, 1.02) var(--animation-delay, 0ms);
+  will-change: opacity;
+}
+
 /*
   Keyframe animations
 */
@@ -228,5 +280,14 @@ h1 {
   }
   to {
     transform: translateY(0%);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
